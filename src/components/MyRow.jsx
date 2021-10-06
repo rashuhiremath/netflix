@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class MyRow extends React.Component {
@@ -46,8 +47,10 @@ class MyRow extends React.Component {
                 {
                     this.state.movies.map(movie => (
                     <div className="colxx ml-1">
-                    <div key={movie.imdbID} className="card " >
-                        <img src={movie.Poster} className="movie" alt="..."/>
+                    <div key={movie.imdbID} className="card " ><Link to={'/moviedetails/' + movie.imdbID}>
+                    <img src={movie.Poster} className="movie" alt="..."/>
+                        </Link>
+                        
                     </div>
                     </div>
                 ))
