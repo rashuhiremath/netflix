@@ -47,7 +47,7 @@ class MyRow extends React.Component {
                     this.state.movies.map(movie => (
                     <div className="colxx ml-1">
                     <div key={movie.imdbID} className="card " >
-                        <a href="hfh"><img src={movie.Poster} className="movie" alt="..."/></a>
+                        <img src={movie.Poster} className="movie" alt="..."/>
                     </div>
                     </div>
                 ))
