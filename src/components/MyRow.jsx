@@ -14,6 +14,7 @@ class MyRow extends React.Component {
      fetchMovie = async() => {
         
         try {
+            
 
             const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=1dcfbf0b&s=${this.props.query}`)
             const data = await response.json()
@@ -47,9 +48,10 @@ class MyRow extends React.Component {
                 {
                     this.state.movies.map(movie => (
                     <div className="colxx ml-1">
-                    <div key={movie.imdbID} className="card " ><Link to={'/moviedetails/' + movie.imdbID}>
-                    <img src={movie.Poster} className="movie" alt="..."/>
-                        </Link>
+                    <div key={movie.imdbID} className="card " >
+                         <Link to={`/movieDetails/${movie.imdbID}`}> 
+                        <img src={movie.Poster} className="movie" alt="..."/>
+                        </Link> 
                         
                     </div>
                     </div>
