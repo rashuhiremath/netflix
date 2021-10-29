@@ -14,13 +14,13 @@ class MyRow extends React.Component {
         
         try {
 
-            const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=1dcfbf0b&s=${this.props.query}`)
+            const response = await fetch(REACT_APP_GET_URL)
             const data = await response.json()
             if(response.ok){
 
                 console.log(`initial data`, data)
                 this.setState({
-                    movies: data.Search
+                    movies: data
                 })
                 console.log(`here is your data `, this.state.movies)
 
