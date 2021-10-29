@@ -16,7 +16,7 @@ class MyRow extends React.Component {
         try {
             //const response = await fetch(`http://localhost:3001/media=${this.props.query}`)
 
-            const response = await fetch(`http://localhost:3001/media`)
+            const response = await fetch(process.env.REACT_APP_GET_URL)
             const data = await response.json()
             if(response.ok){
 
