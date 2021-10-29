@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class MyRow extends React.Component {
@@ -13,14 +14,15 @@ class MyRow extends React.Component {
      fetchMovie = async() => {
         
         try {
+            //const response = await fetch(`http://localhost:3001/media=${this.props.query}`)
 
-            const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=1dcfbf0b&s=${this.props.query}`)
+            const response = await fetch(process.env.REACT_APP_GET_URL)
             const data = await response.json()
             if(response.ok){
 
-                console.log(`initial data`, data)
+                console.log(`my movie data`, data)
                 this.setState({
-                    movies: data.Search
+                    movies: data
                 })
                 console.log(`here is your data `, this.state.movies)
 
@@ -45,11 +47,22 @@ class MyRow extends React.Component {
             <>
                 {
                     this.state.movies.map(movie => (
-                    <div className="colxx ml-1">
-                    <div key={movie.imdbID} className="card " >
-                        <img src={movie.Poster} className="movie" alt="..."/>
+                    <div className="colxx ml-1 text-white">
+                    <div key={movie.id} className="card " >
+                 
+                         <Link to={`/media/${movie.id}`}> 
+                         <div>
+                         <img src={movie.Poster} className="movie" alt="..."/>
+                         
+                         </div>
+                        
+                        
+                        </Link>   
                     </div>
+                    
+                    
                     </div>
+                    
                 ))
                 }
             </>        
