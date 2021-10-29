@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+console.log("row rendered")
 class MyRow extends React.Component {
     
 
@@ -11,7 +11,7 @@ class MyRow extends React.Component {
 
     
      fetchMovie = async() => {
-        
+   
         try {
 
             const response = await fetch(process.env.REACT_APP_GET_URL)
@@ -35,6 +35,7 @@ class MyRow extends React.Component {
      }
 
     componentDidMount(){
+     
         this.fetchMovie()
     }
 
