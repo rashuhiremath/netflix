@@ -53,12 +53,12 @@ class Body extends React.Component {
           </div>
             <Search />
 
-          <h4 className="pt-1 mb-3 text-left">Popular on AlexFlix  <span className="xplore">Explore All</span><img src="./assets/arrow-right.png" width={18} alt="" className="arrow-right"/></h4>
+          <h4 className="pt-1 mb-3 text-left">Popular on Flix  <span className="xplore">Explore All</span><img src="./assets/arrow-right.png" width={18} alt="" className="arrow-right"/></h4>
           <div id="action" className="d-flex">
             <MyRow query={"action"} />
           </div>
 
-          <h4 className="pt-4 mb-3 text-left">Continue Watching for Alexander <span className="xplore">Explore All</span><img src="./assets/arrow-right.png" width={18} alt="" className="arrow-right"/></h4>
+          <h4 className="pt-4 mb-3 text-left">Continue Watching  <span className="xplore">Explore All</span><img src="./assets/arrow-right.png" width={18} alt="" className="arrow-right"/></h4>
           <div id="horror" className="d-flex">
             <MyRow query={"funny"} />
           </div>

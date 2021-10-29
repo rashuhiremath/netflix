@@ -16,7 +16,7 @@ function App() {
         <MyNav />
         
         <Route path="/" exact component={Body} />
-        <Route path="/movieDetails/:movieId" exact component={MovieDetails} />
+        <Route path="/movieDetails/:id" exact component={MovieDetails} />
         <MyFooter />
       
       </Router>

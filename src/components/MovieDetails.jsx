@@ -4,19 +4,19 @@ const MovieDetails = ({ match }) => {
   const [movieItem, setMovieItem] = useState(null);
 
   useEffect(() => {
-    let urlId = match.params.movieId;
+    let urlId = match.params.id;
     fetchMovie(urlId);
   }, []);
 
   const fetchMovie = async (urlId) => {
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=1dcfbf0b&i=${urlId}`
+        `http://localhost:3001/media=${urlId}`
       );
-      const data = await response.json();
+      const imageData = await response.json();
       if (response.ok) {
-        console.log(`initial data`, data);
-        setMovieItem(data);
+        console.log("my single movie details", imageData);
+        setMovieItem(imageData);
       } else {
         console.log(`something went wrong`);
       }
@@ -27,7 +27,9 @@ const MovieDetails = ({ match }) => {
 
   return (
     <div className="text-white">
-      {movieItem && <div>{<img src={movieItem.Poster} />}</div>}
+      {
+      movieItem && <div>{<img src={movieItem.Poster} />}</div>
+      }
     </div>
   );
 };
