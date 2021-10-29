@@ -14,7 +14,7 @@ class MyRow extends React.Component {
         
         try {
 
-            const response = await fetch(REACT_APP_GET_URL)
+            const response = await fetch(process.env.REACT_APP_GET_URL)
             const data = await response.json()
             if(response.ok){
 
